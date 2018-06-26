@@ -1,0 +1,14 @@
+.section--primary#content{ tabindex: "0" }
+  .container
+    %h1
+      %span= 'When did that happen?!'
+
+    %h2= 'Select a step'
+    = form_tag('/steps') do
+      .section--minor
+        -# = select_tag(:step, options_for_select(@steps.collect { |step| [ step['ProcedureStepName'], [step['LocalId'], step['ProcedureStepName']] ] }))
+
+        = select_tag(:step_id, options_for_select(@steps.collect { |step| [ step['ProcedureStepName'], step['LocalId'] ] }))
+
+
+        = submit_tag('Get step', class: 'btn--primary')

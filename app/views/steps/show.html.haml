@@ -1,0 +1,10 @@
+.section--primary#content{ tabindex: "0" }
+  .container
+    %h1
+      %span= @step_name
+
+    %ul.list--block
+      - @business_items.each do |business_item|
+        %li
+          - work_package_id, work_packageable_thing_name = StepActualisationHelper.actualised_work_packages(@step_id, business_item)
+          = link_to("#{work_packageable_thing_name}", "beta.parliament.uk/work-packages/#{work_package_id}")
