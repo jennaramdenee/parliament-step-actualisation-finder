@@ -6,5 +6,6 @@
     %ul.list--block
       - @business_items.each do |business_item|
         %li
-          - work_package_id, work_packageable_thing_name = StepActualisationHelper.actualised_work_packages(@step_id, business_item)
-          = link_to("#{work_packageable_thing_name}", "beta.parliament.uk/work-packages/#{work_package_id}")
+          - work_package_id, work_packageable_thing_name = StepActualisationHelper.actualised_data(@step_id, business_item)
+          - if work_package_id && work_packageable_thing_name
+            = link_to("#{work_packageable_thing_name}", "beta.parliament.uk/work-packages/#{work_package_id}")

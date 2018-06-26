@@ -14,8 +14,8 @@ class StepsController < ApplicationController
 
   def show
     @step_id = params[:id]
-    @step_name = StepActualisationHelper.procedure_step_name(@step_id)
-    @business_items = StepActualisationHelper.business_items(@step_id)
+    @step_name = StepActualisationHelper.get_procedure_step_name(@step_id)
+    @business_items = StepActualisationHelper.get_business_items(@step_id)
   end
 
 end
