@@ -9,6 +9,4 @@
         -# = select_tag(:step, options_for_select(@steps.collect { |step| [ step['ProcedureStepName'], [step['LocalId'], step['ProcedureStepName']] ] }))
 
         = select_tag(:step_id, options_for_select(@steps.collect { |step| [ step['ProcedureStepName'], step['LocalId'] ] }))
-
-
         = submit_tag('Get step', class: 'btn--primary')

@@ -1,13 +1,10 @@
 class StepsController < ApplicationController
 
   def index
-    @steps = ODataRequestHelper.request('ProcedureStep')
+    @steps = ODataRequestHelper.request('ProcedureStep')["value"]
   end
 
   def create
-    # json_params = JSON.parse(params[:step])
-    # @step_id = json_params[0]
-    # @step_name = json_params[1]
     step_id = params[:step_id]
     redirect_to action: 'show', id: step_id
   end
