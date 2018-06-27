@@ -28,6 +28,8 @@ gem 'parliament-utils', '~> 0.8', '>= 0.8.5', require: false
 # Parliament NTriple processes N-triple data
 gem 'parliament-ntriple', '~> 0.2', require: false
 
+gem 'parliament-routes'
+
 # Use bandiera-client for feature flagging
 gem 'bandiera-client'
 
